@@ -12,44 +12,57 @@
 
 #include "push_swap.h"
 
-void ra(t_stacks *stacks)
+void	ra_no_print(t_stacks *stacks)
 {
-	int temp;
-	int count;
+	int	temp;
+	int	count;
 
-	if(stacks->size_a > 1)
+	if (stacks->size_a > 1)
 	{
 		temp = stacks->stack_a[0];
 		count = 0;
-		while(count < stacks->size_a - 1)
+		while (count < stacks->size_a - 1)
 		{
 			stacks->stack_a[count] = stacks->stack_a[count + 1];
 			count++;
 		}
-		stacks->stack_a[count] = temp;
+		stacks->stack_a[stacks->size_a - 1] = temp;
 	}
 }
 
-void rb(t_stacks *stacks)
+void	rb_no_print(t_stacks *stacks)
 {
-	int temp;
-	int count;
+	int	temp;
+	int	count;
 
-	if(stacks->size_b > 1)
+	if (stacks->size_b > 1)
 	{
 		temp = stacks->stack_b[0];
 		count = 0;
-		while(count < stacks->size_b - 1)
+		while (count < stacks->size_b - 1)
 		{
 			stacks->stack_b[count] = stacks->stack_b[count + 1];
 			count++;
 		}
-		stacks->stack_b[count] = temp;
+		stacks->stack_b[stacks->size_b - 1] = temp;
 	}
+}
+
+void	ra(t_stacks *stacks)
+{
+	ra_no_print(stacks);
+	ft_printf("ra\n");
+}
+
+void	rb(t_stacks *stacks)
+{
+	rb_no_print(stacks);
+	ft_printf("rb\n");
 }
 
 void	rr(t_stacks *stacks)
 {
 	ra(stacks);
 	rb(stacks);
+	ft_printf("rr\n");
 }

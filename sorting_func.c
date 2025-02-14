@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 13:02:56 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/05 13:03:48 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/14 18:33:57 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ int	*bubble_sort_stack(int *stack_a_int, int stack_a_length)
 	}
 	return (stack_a_int);
 }
-

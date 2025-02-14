@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:07:24 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/10 11:00:06 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/14 18:04:47 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,20 @@ long	ft_atolo(const char *str)
 		count++;
 	}
 	return (final * check);
+}
+
+int	ft_sqrt(int nb)
+{
+	int	sqr_root;
+
+	if (nb < 0)
+		return (0);
+	sqr_root = 0;
+	while (sqr_root * sqr_root <= nb)
+	{
+		if (sqr_root * sqr_root <= nb && (sqr_root + 1) * (sqr_root + 1) >= nb)
+			return (sqr_root);
+		sqr_root++;
+	}
+	return (0);
 }

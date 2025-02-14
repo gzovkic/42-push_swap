@@ -6,60 +6,58 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:13:27 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/11 12:47:35 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/14 18:34:51 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void pa(t_stacks *stacks)
+void	pa(t_stacks *stacks)
 {
-	int count;
+	int	count;
 
-	if(stacks->size_b > 0)
+	if (stacks->size_b > 0)
 	{
-		count = stacks->size_a;
-		while(count > 0)
+		count = stacks->size_a - 1;
+		while (count >= 0)
 		{
-			stacks->stack_a[count] = stacks->stack_a[count - 1];
+			stacks->stack_a[count + 1] = stacks->stack_a[count];
 			count--;
 		}
 		stacks->stack_a[0] = stacks->stack_b[0];
-		stacks->size_a++;
+		stacks->size_a += 1;
 		count = 0;
-		while (count < stacks->size_b - 1)
+		while (count < stacks->size_b)
 		{
 			stacks->stack_b[count] = stacks->stack_b[count + 1];
 			count++;
 		}
-		stacks->size_b--;
+		stacks->size_b -= 1;
 		ft_printf("pa\n");
 	}
 }
 
-void pb(t_stacks *stacks)
+void	pb(t_stacks *stacks)
 {
-	int count;
+	int	count;
 
-	if(stacks->size_a > 0)
+	if (stacks->size_a > 0)
 	{
-		count = stacks->size_b;
-		while(count > 0)
+		count = stacks->size_b - 1;
+		while (count >= 0)
 		{
-			stacks->stack_b[count] = stacks->stack_b[count - 1];
+			stacks->stack_b[count + 1] = stacks->stack_b[count];
 			count--;
 		}
-
 		stacks->stack_b[0] = stacks->stack_a[0];
-		stacks->size_b++;
-
+		stacks->size_b += 1;
 		count = 0;
-		while (count < stacks->size_a - 1)
+		while (count < stacks->size_a)
 		{
 			stacks->stack_a[count] = stacks->stack_a[count + 1];
 			count++;
 		}
-		stacks->size_a--;
+		stacks->size_a -= 1;
 		ft_printf("pb\n");
 	}
 }
