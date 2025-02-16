@@ -3,17 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   error_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 13:40:29 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/14 18:18:55 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/16 11:27:39 by gabrijel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	printf_and_exit(char *message)
+void free_array(int *array)
 {
+	if(array)
+	{
+		free(array);
+		array = NULL;
+	}
+}
+
+
+void	printf_and_exit(char *message, t_stacks *stacks)
+{
+	if(stacks)
+	{
+		if(stacks->stack_a)
+			free_array(stacks->stack_a);
+		if(stacks->stack_b)
+			free_array(stacks->stack_b);
+		if(stacks->index_stack)
+			free_array(stacks->index_stack);
+	}
 	ft_printf("Error\n%s\n", message);
 	exit(EXIT_FAILURE);
 }
@@ -30,7 +49,7 @@ void	check_doubles(t_stacks *stacks)
 		while (count2 < stacks->size_a)
 		{
 			if (stacks->stack_a[count] == stacks->stack_a[count2])
-				printf_and_exit("Duplicate number");
+				printf_and_exit("Duplicate number", stacks);
 			count2++;
 		}
 		count++;

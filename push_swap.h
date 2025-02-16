@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:53:10 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/14 18:33:15 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/16 11:41:20 by gabrijel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stacks
 }		t_stacks;
 
 // error_msg.c_________________________________
-void	printf_and_exit(char *message);
+void	printf_and_exit(char *message, t_stacks *stacks);
 void	check_doubles(t_stacks *stacks);
 
 // utils.c_____________________________________

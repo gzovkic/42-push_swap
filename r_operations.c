@@ -51,18 +51,18 @@ void	rb_no_print(t_stacks *stacks)
 void	ra(t_stacks *stacks)
 {
 	ra_no_print(stacks);
-	ft_printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_stacks *stacks)
 {
 	rb_no_print(stacks);
-	ft_printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_stacks *stacks)
 {
 	ra(stacks);
 	rb(stacks);
-	ft_printf("rr\n");
+	write(1, "rr\n", 3);
 }

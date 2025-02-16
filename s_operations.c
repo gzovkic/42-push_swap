@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_operations.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 11:50:29 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/14 18:33:53 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/16 11:03:38 by gabrijel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void	sb_no_print(t_stacks *stacks)
 void	sa(t_stacks *stacks)
 {
 	sa_no_print(stacks);
-	ft_printf("sa\n");
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_stacks *stacks)
 {
 	sb_no_print(stacks);
-	ft_printf("sb\n");
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_stacks *stacks)
@@ -54,6 +54,6 @@ void	ss(t_stacks *stacks)
 	{
 		sa_no_print(stacks);
 		sb_no_print(stacks);
-		ft_printf("ss\n");
+		write(1, "ss\n", 3);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_operations.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:13:27 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/14 18:34:51 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/16 11:03:57 by gabrijel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	pa(t_stacks *stacks)
 			count++;
 		}
 		stacks->size_b -= 1;
-		ft_printf("pa\n");
+		write(1, "pa\n", 3);
 	}
 }
 
@@ -58,6 +58,6 @@ void	pb(t_stacks *stacks)
 			count++;
 		}
 		stacks->size_a -= 1;
-		ft_printf("pb\n");
+		write(1, "pb\n", 3);
 	}
 }

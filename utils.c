@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:07:24 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/14 18:04:47 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/16 14:31:31 by gabrijel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ void	free_split(char **map)
 	free(map);
 }
 
+
+int	check_number(char *str, int *count)
+{
+	if (str[*count] == '-')
+	{
+		(*count)++;
+		if (!(str[*count] >= '0' && str[*count] <= '9'))
+			return (EXIT_FAILURE);
+	}
+	while (str[*count] >= '0' && str[*count] <= '9')
+		(*count)++;
+	return (EXIT_FAILURE);
+}
+
 void	check_argument(char *stack_a)
 {
 	int	count;
@@ -44,30 +58,17 @@ void	check_argument(char *stack_a)
 	count = 0;
 	while (stack_a[count] != '\0')
 	{
-		if (stack_a[count] == 32 || (stack_a[count] >= 9
-				&& stack_a[count] <= 13))
+		if (stack_a[count] == 32 || (stack_a[count] >= 9 && stack_a[count] <= 13))
 			count++;
-		else if (!(stack_a[count] >= '0' && stack_a[count] <= '9'))
-			printf_and_exit("invalid input");
-		if (stack_a[count] == '-')
-		{
-			count++;
-			if (!(stack_a[count] >= '0' && stack_a[count] <= '9'))
-				printf_and_exit("invalid input");
-			while (stack_a[count] >= '0' && stack_a[count] <= '9')
-			{
-				number_flag = 1;
-				count++;
-			}
-		}
-		if (stack_a[count] >= '0' && stack_a[count] <= '9')
-		{
+		else if (!(stack_a[count] >= '0' && stack_a[count] <= '9') && stack_a[count] != '-')
+			printf_and_exit("invalid input", NULL);
+		else if (!check_number(stack_a, &count))
+			printf_and_exit("invalid input", NULL);
+		else
 			number_flag = 1;
-			count++;
-		}
 	}
 	if (number_flag == 0)
-		printf_and_exit("no numbers in arguments");
+		printf_and_exit("no numbers in arguments", NULL);
 }
 
 long	ft_atolo(const char *str)
