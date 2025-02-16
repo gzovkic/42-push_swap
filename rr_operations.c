@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rr_operations.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 09:30:09 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 11:03:14 by gabrijel         ###   ########.fr       */
+/*   Updated: 2025/02/16 16:14:57 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,18 @@ void	rrb_no_print(t_stacks *stacks)
 void	rra(t_stacks *stacks)
 {
 	rra_no_print(stacks);
-	write(1, "rra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stacks *stacks)
 {
 	rrb_no_print(stacks);
-	write(1, "rrb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stacks *stacks)
 {
 	rra(stacks);
 	rrb(stacks);
-	write(1, "rrr\n", 3);
+	write(1, "rrr\n", 4);
 }

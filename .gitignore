@@ -1,0 +1,6 @@
+*.o
+42-docker-container
+push_swap
+.vscode
+.DS_Store
+push_swap.pdf

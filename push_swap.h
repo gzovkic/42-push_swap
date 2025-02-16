@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:53:10 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 11:41:20 by gabrijel         ###   ########.fr       */
+/*   Updated: 2025/02/16 16:12:02 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct s_stacks
 // error_msg.c_________________________________
 void	printf_and_exit(char *message, t_stacks *stacks);
 void	check_doubles(t_stacks *stacks);
+void	free_array(int *array);
+
 
 // utils.c_____________________________________
 int		ft_strlen_index(char *map[]);
@@ -43,14 +45,17 @@ void	check_argument(char *stack_a);
 long	ft_atolo(const char *str);
 int		ft_sqrt(int nb);
 
+
 // Malloc_func.c_______________________________
 char	**create_stack_a_split(char *stack_a);
 int		*create_stack_a_int(char **stack_a_split);
 char	*create_argument_str(char *argv[]);
-void	sort_stack_a(char *stack_a, t_stacks *stacks);
+void	prepair_stacks(char *stack_a, t_stacks *stacks);
+
 
 // sorting_func.c______________________________
 int		*bubble_sort_stack(int *stack_a_int, int stack_a_length);
+
 
 // s_operations.c______________________________
 void	sa_no_print(t_stacks *stacks);

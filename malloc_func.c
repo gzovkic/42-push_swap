@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   malloc_func.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:27:13 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 14:35:15 by gabrijel         ###   ########.fr       */
+/*   Updated: 2025/02/16 16:22:11 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**create_stack_a_split(char *stack_a)
 
 	stack_a_split = ft_split(stack_a, ' ');
 	if (!stack_a_split)
-		printf_and_exit("stack_a no no split");
+		printf_and_exit("stack_a no no split", NULL);
 	return (stack_a_split);
 }
 
@@ -33,12 +33,15 @@ int	*create_stack(char **stack_a_split)
 	stack_a_lenght = ft_strlen_index(stack_a_split);
 	stack_a_int = ft_calloc(stack_a_lenght, sizeof(int));
 	if (!stack_a_int)
-		printf_and_exit("stack_a_int no no malloc");
+		printf_and_exit("stack_a_int no no malloc", NULL);
 	while (count < stack_a_lenght)
 	{
 		num = ft_atolo(stack_a_split[count]);
 		if (num > INT_MAX || num < INT_MIN)
-			printf_and_exit("Interger overflow/underflow detected");
+		{
+			free_array(stack_a_int);
+			printf_and_exit("Number out of int range", NULL);
+		}
 		stack_a_int[count] = (int)num;
 		count++;
 	}
@@ -71,16 +74,19 @@ char	*create_argument_str(char *argv[])
 void create_stacks(char *arg_str, t_stacks *stacks)
 {
 	char	**stack_a_split;
-	int		stack_a_lenght;
 
 	check_argument(arg_str);
 	stack_a_split = create_stack_a_split(arg_str);
+	if(!stack_a_split)
+		printf_and_exit("stack_a_split no no malloc", NULL);
 	stacks->stack_a = create_stack(stack_a_split);
+	if(!stacks->stack_a)
+		printf_and_exit("stack_a no no malloc", stacks);
 	stacks->size_a = ft_strlen_index(stack_a_split);
 	check_doubles(stacks);
-	stacks->stack_a = create_stack(stack_a_split);
 	stacks->index_stack = create_stack(stack_a_split);
-	stack_a_lenght = ft_strlen_index(stack_a_split);
+	if(!stacks->index_stack)
+		printf_and_exit("index_stack no no malloc", stacks);
 	free_split(stack_a_split);
 
 }
