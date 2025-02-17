@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:07:24 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 11:10:34 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/17 15:16:39 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,43 +35,32 @@ void	free_split(char **map)
 	free(map);
 }
 
-int	check_number(char *str, int *count)
-{
-	if (str[*count] == '-')
-	{
-		(*count)++;
-		if (!(str[*count] >= '0' && str[*count] <= '9'))
-			return (EXIT_FAILURE);
-	}
-	if (!(str[*count] >= '0' && str[*count] <= '9'))
-		return (EXIT_FAILURE);
-	while (str[*count] >= '0' && str[*count] <= '9')
-		(*count)++;
-	return (EXIT_FAILURE);
-}
-
 void	check_argument(char *stack_a)
 {
-	int	count;
-	int	number_flag;
+	int	i;
 
-	number_flag = 0;
-	count = 0;
-	while (stack_a[count] != '\0')
+	i = 0;
+	while (stack_a[i])
 	{
-		if (stack_a[count] == 32 || (stack_a[count] >= 9
-				&& stack_a[count] <= 13))
-			count++;
-		else if (!(stack_a[count] >= '0' && stack_a[count] <= '9')
-			&& stack_a[count] != '-')
+		while (stack_a[i] && (stack_a[i] == ' ' || (stack_a[i] >= 9
+					&& stack_a[i] <= 13)))
+			i++;
+		if (!stack_a[i])
+			break ;
+		if (stack_a[i] == '-')
+		{
+			if (!(stack_a[i + 1] >= '0' && stack_a[i + 1] <= '9'))
+				printf_and_exit("invalid input", NULL);
+			i++;
+		}
+		if (!(stack_a[i] >= '0' && stack_a[i] <= '9'))
 			printf_and_exit("invalid input", NULL);
-		else if (!check_number(stack_a, &count))
+		while (stack_a[i] && (stack_a[i] >= '0' && stack_a[i] <= '9'))
+			i++;
+		if (stack_a[i] && !(stack_a[i] == ' ' || (stack_a[i] >= 9
+					&& stack_a[i] <= 13)))
 			printf_and_exit("invalid input", NULL);
-		else
-			number_flag = 1;
 	}
-	if (number_flag == 0)
-		printf_and_exit("no numbers in arguments", NULL);
 }
 
 long	ft_atolo(const char *str)

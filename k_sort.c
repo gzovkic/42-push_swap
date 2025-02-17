@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:03:20 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 10:59:38 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/17 15:17:13 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,9 @@ void	k_sort(t_stacks *stacks)
 		return ;
 	}
 	else
+	{
 		set_index(stacks);
-	push_b(stacks);
-	push_back(stacks);
+		push_b(stacks);
+		push_back(stacks);
+	}
 }
