@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:36:26 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/01/24 10:50:56 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/03 10:47:26 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (!container[fd])
-		container[fd] = ft_calloc(1, sizeof(char));
+		container[fd] = ft_calloc_gnl(1, sizeof(char));
 	if (!container[fd])
 		return (NULL);
 	byte_length = read_count(fd, &container[fd]);
@@ -82,7 +82,7 @@ int	read_count(int fd, char **container)
 		if (!str2)
 			return (*container = NULL, -1);
 		*container = str2;
-		if (ft_strchr(*container, '\n'))
+		if (ft_strchr_gnl(*container, '\n'))
 			break ;
 		buffer_check = read(fd, buffer, BUFFER_SIZE);
 	}
@@ -100,9 +100,9 @@ char	*make_str(char *buffer)
 	while (buffer[count] != '\n' && buffer[count] != '\0')
 		count++;
 	if (buffer[count] == '\n')
-		str = ft_calloc(count + 2, sizeof(char));
+		str = ft_calloc_gnl(count + 2, sizeof(char));
 	else
-		str = ft_calloc(count + 1, sizeof(char));
+		str = ft_calloc_gnl(count + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	while (count > count2)
@@ -127,7 +127,7 @@ char	*leftover_check(char *buffer)
 		count++;
 	if (buffer[count] == '\0')
 		return (NULL);
-	str = ft_calloc(ft_strlen_gnl(buffer) - count + 1, sizeof(char));
+	str = ft_calloc_gnl(ft_strlen_gnl(buffer) - count + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	count++;

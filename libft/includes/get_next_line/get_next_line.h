@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:11:13 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/01/24 10:50:22 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/01/28 18:13:57 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-void	*ft_calloc(size_t count, size_t size);
-void	ft_bzero(void *s, size_t n);
+void	*ft_calloc_gnl(size_t count, size_t size);
+void	ft_bzero_gnl(void *s, size_t n);
 char	*ft_strjoin_gnl(char const *s1, char const *s2);
 int		ft_strlen_gnl(const char *c);
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr_gnl(const char *s, int c);
 
 #endif

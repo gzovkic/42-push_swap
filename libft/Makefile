@@ -77,6 +77,7 @@ all: $(NAME)
 # rules to create the library
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 	@echo "Library $(NAME) created."
 
 # turns .c files into .o files

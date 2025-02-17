@@ -6,17 +6,17 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:10:36 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/01/24 10:49:50 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/01/28 18:14:50 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	*ft_calloc(size_t count, size_t size);
-void	ft_bzero(void *s, size_t n);
+void	*ft_calloc_gnl(size_t count, size_t size);
+void	ft_bzero_gnl(void *s, size_t n);
 char	*ft_strjoin_gnl(char const *s1, char const *s2);
 int		ft_strlen_gnl(const char *c);
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr_gnl(const char *s, int c);
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -29,13 +29,13 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	while (num < count * size)
 	{
-		ft_bzero(ptr + num, size);
+		ft_bzero_gnl(ptr + num, size);
 		num = num + size;
 	}
 	return (ptr);
 }
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero_gnl(void *s, size_t n)
 {
 	size_t			count;
 	unsigned char	*loc;
@@ -59,7 +59,7 @@ char	*ft_strjoin_gnl(char const *s1, char const *s2)
 	count = 0;
 	count2 = 0;
 	sumstr = ft_strlen_gnl(s1) + ft_strlen_gnl(s2);
-	newstr = ft_calloc(sumstr + 1, sizeof(char));
+	newstr = ft_calloc_gnl(sumstr + 1, sizeof(char));
 	if (!newstr)
 		return (NULL);
 	while (count + count2 < sumstr)
@@ -88,7 +88,7 @@ int	ft_strlen_gnl(const char *c)
 	return (count);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	int				count;
 	unsigned char	c2;
