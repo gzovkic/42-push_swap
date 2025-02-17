@@ -7,6 +7,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 SRCS = 	push_swap.c \
 		error_msg.c \
 		utils.c \
+		more_utils.c \
 		malloc_func.c \
 		sorting_func.c \
 		s_operations.c \

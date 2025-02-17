@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:03:20 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 17:57:03 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/17 10:59:38 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,37 +116,26 @@ void	set_index(t_stacks *stacks)
 	}
 }
 
-int check_sorted(t_stacks *stack)
-{
-	int count;
-
-	count = 0;
-	while(stack->stack_a[count] == stack->index_stack[count] && count < stack->size_a)
-		count++;
-	if(count == stack->size_a)
-		return(EXIT_SUCCESS);
-	return (EXIT_FAILURE);
-}
-
 void	k_sort(t_stacks *stacks)
 {
-	if(stacks->size_a < 6)
+	if (stacks->size_a < 6)
 	{
-		if(stacks->size_a == 1)
+		if (stacks->size_a == 1)
 			return ;
-		else if(check_sorted(stacks) == 0)
+		else if (check_sorted(stacks) == 0)
 			printf_and_exit("Already sorted", stacks);
-		// else if (stacks->size_a == 2)
-		// 	sort_two(stacks);
-		// else if (stacks->size_a == 3)
-		// 	sort_three(stacks);
-		// else if (stacks->size_a == 4)
-		// 	sort_four(stacks);
-		// else if (stacks->size_a == 5)
-		// 	sort_five(stacks);
+		else if (stacks->size_a == 2)
+			sort_two(stacks);
+		else if (stacks->size_a == 3)
+			sort_three(stacks);
+		else if (stacks->size_a == 4)
+			sort_four(stacks);
+		else if (stacks->size_a == 5)
+			sort_five(stacks);
+		return ;
 	}
 	else
 		set_index(stacks);
-		push_b(stacks);
-		push_back(stacks);
+	push_b(stacks);
+	push_back(stacks);
 }

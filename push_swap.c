@@ -6,39 +6,24 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:24:44 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 16:33:41 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/17 10:58:56 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	leaks(void)
-{
-	printf("\n");
-	system("leaks push_swap");
-}
-void free_stacks(t_stacks *stacks)
-{
-	if(stacks)
-	{
-	if (stacks->stack_a)
-		free_array(stacks->stack_a);
-	if (stacks->stack_b)
-		free_array(stacks->stack_b);
-	if (stacks->index_stack)
-		free_array(stacks->index_stack);
-	}
-}
+// void	leaks(void)
+// {
+// 	printf("\n");
+// 	system("leaks push_swap");
+// }
+// atexit(leaks);
 
 int	main(int argc, char *argv[])
 {
 	char		*arg_str;
 	t_stacks	stacks;
 
-	// atexit(leaks);
-
-
-	stacks.size_b = 0;
 	if (argc == 2)
 	{
 		prepair_stacks(argv[1], &stacks);

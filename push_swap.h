@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:53:10 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 16:12:02 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/17 10:58:50 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	printf_and_exit(char *message, t_stacks *stacks);
 void	check_doubles(t_stacks *stacks);
 void	free_array(int *array);
 
-
 // utils.c_____________________________________
 int		ft_strlen_index(char *map[]);
 void	free_split(char **map);
@@ -45,6 +44,8 @@ void	check_argument(char *stack_a);
 long	ft_atolo(const char *str);
 int		ft_sqrt(int nb);
 
+// more_utils.c_________________________________
+int		find_min(t_stacks *stacks);
 
 // Malloc_func.c_______________________________
 char	**create_stack_a_split(char *stack_a);
@@ -52,10 +53,12 @@ int		*create_stack_a_int(char **stack_a_split);
 char	*create_argument_str(char *argv[]);
 void	prepair_stacks(char *stack_a, t_stacks *stacks);
 
-
 // sorting_func.c______________________________
 int		*bubble_sort_stack(int *stack_a_int, int stack_a_length);
-
+void	sort_two(t_stacks *stacks);
+void	sort_three(t_stacks *stacks);
+void	sort_four(t_stacks *stacks);
+void	sort_five(t_stacks *stacks);
 
 // s_operations.c______________________________
 void	sa_no_print(t_stacks *stacks);

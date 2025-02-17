@@ -3,34 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   error_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 13:40:29 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 11:27:39 by gabrijel         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:56:55 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_array(int *array)
+void	free_array(int *array)
 {
-	if(array)
+	if (array)
 	{
 		free(array);
 		array = NULL;
 	}
 }
 
-
 void	printf_and_exit(char *message, t_stacks *stacks)
 {
-	if(stacks)
+	if (stacks)
 	{
-		if(stacks->stack_a)
+		if (stacks->stack_a)
 			free_array(stacks->stack_a);
-		if(stacks->stack_b)
+		if (stacks->stack_b)
 			free_array(stacks->stack_b);
-		if(stacks->index_stack)
+		if (stacks->index_stack)
 			free_array(stacks->index_stack);
 	}
 	ft_printf("Error\n%s\n", message);
@@ -53,5 +52,18 @@ void	check_doubles(t_stacks *stacks)
 			count2++;
 		}
 		count++;
+	}
+}
+
+void	free_stacks(t_stacks *stacks)
+{
+	if (stacks)
+	{
+		if (stacks->stack_a)
+			free_array(stacks->stack_a);
+		if (stacks->stack_b)
+			free_array(stacks->stack_b);
+		if (stacks->index_stack)
+			free_array(stacks->index_stack);
 	}
 }

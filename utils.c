@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:07:24 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 14:31:31 by gabrijel         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:00:54 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	free_split(char **map)
 	free(map);
 }
 
-
 int	check_number(char *str, int *count)
 {
 	if (str[*count] == '-')
@@ -58,9 +57,11 @@ void	check_argument(char *stack_a)
 	count = 0;
 	while (stack_a[count] != '\0')
 	{
-		if (stack_a[count] == 32 || (stack_a[count] >= 9 && stack_a[count] <= 13))
+		if (stack_a[count] == 32 || (stack_a[count] >= 9
+				&& stack_a[count] <= 13))
 			count++;
-		else if (!(stack_a[count] >= '0' && stack_a[count] <= '9') && stack_a[count] != '-')
+		else if (!(stack_a[count] >= '0' && stack_a[count] <= '9')
+			&& stack_a[count] != '-')
 			printf_and_exit("invalid input", NULL);
 		else if (!check_number(stack_a, &count))
 			printf_and_exit("invalid input", NULL);
@@ -95,20 +96,4 @@ long	ft_atolo(const char *str)
 		count++;
 	}
 	return (final * check);
-}
-
-int	ft_sqrt(int nb)
-{
-	int	sqr_root;
-
-	if (nb < 0)
-		return (0);
-	sqr_root = 0;
-	while (sqr_root * sqr_root <= nb)
-	{
-		if (sqr_root * sqr_root <= nb && (sqr_root + 1) * (sqr_root + 1) >= nb)
-			return (sqr_root);
-		sqr_root++;
-	}
-	return (0);
 }

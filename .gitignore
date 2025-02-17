@@ -5,3 +5,6 @@ push_swap
 .DS_Store
 push_swap.pdf
 .gitignore
+checker_Mac(1)
+src
+push_swap_visualizer
