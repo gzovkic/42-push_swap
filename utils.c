@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:07:24 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 11:00:54 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/17 11:10:34 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	check_number(char *str, int *count)
 		if (!(str[*count] >= '0' && str[*count] <= '9'))
 			return (EXIT_FAILURE);
 	}
+	if (!(str[*count] >= '0' && str[*count] <= '9'))
+		return (EXIT_FAILURE);
 	while (str[*count] >= '0' && str[*count] <= '9')
 		(*count)++;
 	return (EXIT_FAILURE);

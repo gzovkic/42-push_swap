@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:53:10 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 10:58:50 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/17 11:06:43 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_stacks
 void	printf_and_exit(char *message, t_stacks *stacks);
 void	check_doubles(t_stacks *stacks);
 void	free_array(int *array);
+void	free_stacks(t_stacks *stacks);
 
 // utils.c_____________________________________
 int		ft_strlen_index(char *map[]);
@@ -46,6 +47,8 @@ int		ft_sqrt(int nb);
 
 // more_utils.c_________________________________
 int		find_min(t_stacks *stacks);
+int		check_sorted(t_stacks *stack);
+
 
 // Malloc_func.c_______________________________
 char	**create_stack_a_split(char *stack_a);

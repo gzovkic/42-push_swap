@@ -6,24 +6,24 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:24:44 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 10:58:56 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/17 11:05:52 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	leaks(void)
-// {
-// 	printf("\n");
-// 	system("leaks push_swap");
-// }
-// atexit(leaks);
+void	leaks(void)
+{
+	printf("\n");
+	system("leaks push_swap");
+}
 
 int	main(int argc, char *argv[])
 {
 	char		*arg_str;
 	t_stacks	stacks;
 
+	atexit(leaks);
 	if (argc == 2)
 	{
 		prepair_stacks(argv[1], &stacks);
