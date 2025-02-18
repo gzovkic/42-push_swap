@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   malloc_func.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:27:13 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 11:28:29 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 15:09:17 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ char	*create_argument_str(char *argv[])
 		temp = arg_str;
 		count++;
 	}
-	free(temp);
 	return (arg_str);
 }
 

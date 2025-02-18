@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:03:20 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 15:17:13 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 15:17:14 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ void	k_sort(t_stacks *stacks)
 	{
 		if (stacks->size_a == 1)
 			return ;
-		else if (check_sorted(stacks) == 0)
+		else if (check_sorted(stacks) == EXIT_SUCCESS)
 			printf_and_exit("Already sorted", stacks);
 		else if (stacks->size_a == 2)
 			sort_two(stacks);

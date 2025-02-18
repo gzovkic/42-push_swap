@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 11:50:29 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 13:13:50 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 15:18:37 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,16 @@ void	sb_no_print(t_stacks *stacks)
 
 void	sa(t_stacks *stacks)
 {
-	if(stacks->size_a > 1)
+	if (stacks->size_a > 1)
 	{
-	sa_no_print(stacks);
-	write(1, "sa\n", 3);
+		sa_no_print(stacks);
+		write(1, "sa\n", 3);
 	}
 }
 
 void	sb(t_stacks *stacks)
 {
-	if(stacks->size_b > 1)
+	if (stacks->size_b > 1)
 	{
 		sb_no_print(stacks);
 		write(1, "sb\n", 3);

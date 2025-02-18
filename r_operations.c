@@ -68,11 +68,10 @@ void	rb(t_stacks *stacks)
 
 void	rr(t_stacks *stacks)
 {
-	if(stacks->size_a > 1 && stacks->size_b > 1)
+	if (stacks->size_a > 1 && stacks->size_b > 1)
 	{
 		ra_no_print(stacks);
 		rb_no_print(stacks);
 		write(1, "rr\n", 3);
 	}
-
 }

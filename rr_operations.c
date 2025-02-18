@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 09:30:09 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 13:13:10 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 15:18:44 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	rrb_no_print(t_stacks *stacks)
 
 void	rra(t_stacks *stacks)
 {
-	if(stacks->size_a > 1)
+	if (stacks->size_a > 1)
 	{
 		rra_no_print(stacks);
 		write(1, "rra\n", 4);
@@ -59,7 +59,7 @@ void	rra(t_stacks *stacks)
 
 void	rrb(t_stacks *stacks)
 {
-	if(stacks->size_b > 1)
+	if (stacks->size_b > 1)
 	{
 		rrb_no_print(stacks);
 		write(1, "rrb\n", 4);
@@ -68,7 +68,7 @@ void	rrb(t_stacks *stacks)
 
 void	rrr(t_stacks *stacks)
 {
-	if(stacks->size_a > 1 && stacks->size_b > 1)
+	if (stacks->size_a > 1 && stacks->size_b > 1)
 	{
 		rra_no_print(stacks);
 		rrb_no_print(stacks);
