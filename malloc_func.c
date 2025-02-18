@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:27:13 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 15:09:17 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 15:53:40 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**create_stack_a_split(char *stack_a)
 
 	stack_a_split = ft_split(stack_a, ' ');
 	if (!stack_a_split)
-		printf_and_exit("stack_a no no split", NULL);
+		printf_exit_and_str("stack_a no no split", NULL, stack_a);
 	return (stack_a_split);
 }
 
@@ -62,12 +62,12 @@ char	*create_argument_str(char *argv[])
 	{
 		arg_str = ft_strjoin(temp, " ");
 		free(temp);
-		temp = arg_str;
-		arg_str = ft_strjoin(temp, argv[count]);
-		free(temp);
-		temp = arg_str;
+		temp = ft_strjoin(arg_str, argv[count]);
+		free(arg_str);
+		arg_str = temp;
 		count++;
 	}
+	temp = NULL;
 	return (arg_str);
 }
 
@@ -78,7 +78,8 @@ void	create_stacks(char *arg_str, t_stacks *stacks)
 	check_argument(arg_str);
 	stack_a_split = create_stack_a_split(arg_str);
 	if (!stack_a_split)
-		printf_and_exit("stack_a_split no no malloc", NULL);
+		printf_exit_and_str("stack_a_split no no malloc", NULL, arg_str);
+	free(arg_str);
 	stacks->stack_a = create_stack(stack_a_split);
 	if (!stacks->stack_a)
 		printf_and_exit("stack_a no no malloc", stacks);

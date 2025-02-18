@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 13:40:29 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 10:56:55 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 15:54:51 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,21 @@ void	free_stacks(t_stacks *stacks)
 		if (stacks->index_stack)
 			free_array(stacks->index_stack);
 	}
+}
+
+void	printf_exit_and_str(char *message, t_stacks *stacks, char *arg_str)
+{
+	if (arg_str)
+		free(arg_str);
+	if (stacks)
+	{
+		if (stacks->stack_a)
+			free_array(stacks->stack_a);
+		if (stacks->stack_b)
+			free_array(stacks->stack_b);
+		if (stacks->index_stack)
+			free_array(stacks->index_stack);
+	}
+	ft_printf("Error\n%s\n", message);
+	exit(EXIT_FAILURE);
 }

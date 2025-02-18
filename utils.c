@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:07:24 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 15:16:39 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 15:49:05 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ void	check_argument(char *stack_a)
 		if (stack_a[i] == '-')
 		{
 			if (!(stack_a[i + 1] >= '0' && stack_a[i + 1] <= '9'))
-				printf_and_exit("invalid input", NULL);
+				printf_exit_and_str("invalid input", NULL, stack_a);
 			i++;
 		}
 		if (!(stack_a[i] >= '0' && stack_a[i] <= '9'))
-			printf_and_exit("invalid input", NULL);
+			printf_exit_and_str("invalid input", NULL, stack_a);
 		while (stack_a[i] && (stack_a[i] >= '0' && stack_a[i] <= '9'))
 			i++;
 		if (stack_a[i] && !(stack_a[i] == ' ' || (stack_a[i] >= 9
 					&& stack_a[i] <= 13)))
-			printf_and_exit("invalid input", NULL);
+			printf_exit_and_str("invalid input", NULL, stack_a);
 	}
 }
 

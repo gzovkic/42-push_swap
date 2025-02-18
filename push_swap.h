@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:53:10 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 15:06:46 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 15:54:55 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	printf_and_exit(char *message, t_stacks *stacks);
 void	check_doubles(t_stacks *stacks);
 void	free_array(int *array);
 void	free_stacks(t_stacks *stacks);
+void	printf_exit_and_str(char *message, t_stacks *stacks, char *arg_str);
 
 // utils.c_____________________________________
 int		ft_strlen_index(char *map[]);
