@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:24:44 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 11:05:52 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 11:24:07 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	main(int argc, char *argv[])
 	{
 		arg_str = create_argument_str(argv);
 		prepair_stacks(arg_str, &stacks);
-		free(arg_str);
 		k_sort(&stacks);
 		free_stacks(&stacks);
 	}
