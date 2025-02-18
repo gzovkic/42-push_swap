@@ -50,19 +50,29 @@ void	rb_no_print(t_stacks *stacks)
 
 void	ra(t_stacks *stacks)
 {
-	ra_no_print(stacks);
-	write(1, "ra\n", 3);
+	if (stacks->size_a > 1)
+	{
+		ra_no_print(stacks);
+		write(1, "ra\n", 3);
+	}
 }
 
 void	rb(t_stacks *stacks)
 {
-	rb_no_print(stacks);
-	write(1, "rb\n", 3);
+	if (stacks->size_b > 1)
+	{
+		rb_no_print(stacks);
+		write(1, "rb\n", 3);
+	}
 }
 
 void	rr(t_stacks *stacks)
 {
-	ra(stacks);
-	rb(stacks);
-	write(1, "rr\n", 3);
+	if(stacks->size_a > 1 && stacks->size_b > 1)
+	{
+		ra_no_print(stacks);
+		rb_no_print(stacks);
+		write(1, "rr\n", 3);
+	}
+
 }

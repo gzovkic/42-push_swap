@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:24:44 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 11:24:07 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/18 13:15:15 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	leaks(void)
-{
-	printf("\n");
-	system("leaks push_swap");
-}
+// void	leaks(void)
+// {
+// 	printf("\n");
+// 	system("leaks push_swap");
+// }
+//atexit(leaks);
 
 int	main(int argc, char *argv[])
 {
 	char		*arg_str;
 	t_stacks	stacks;
 
-	atexit(leaks);
 	if (argc == 2)
 	{
 		prepair_stacks(argv[1], &stacks);
