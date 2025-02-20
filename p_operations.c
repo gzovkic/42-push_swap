@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_operations.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrijel <gabrijel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:13:27 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/16 11:03:57 by gabrijel         ###   ########.fr       */
+/*   Updated: 2025/02/20 09:43:48 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	pa(t_stacks *stacks)
 		stacks->stack_a[0] = stacks->stack_b[0];
 		stacks->size_a += 1;
 		count = 0;
+		stacks->size_b -= 1;
 		while (count < stacks->size_b)
 		{
 			stacks->stack_b[count] = stacks->stack_b[count + 1];
 			count++;
 		}
-		stacks->size_b -= 1;
 		write(1, "pa\n", 3);
 	}
 }
@@ -52,12 +52,12 @@ void	pb(t_stacks *stacks)
 		stacks->stack_b[0] = stacks->stack_a[0];
 		stacks->size_b += 1;
 		count = 0;
+		stacks->size_a -= 1;
 		while (count < stacks->size_a)
 		{
 			stacks->stack_a[count] = stacks->stack_a[count + 1];
 			count++;
 		}
-		stacks->size_a -= 1;
 		write(1, "pb\n", 3);
 	}
 }
