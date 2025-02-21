@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:24:44 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 16:10:15 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/21 10:15:29 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char *argv[])
 	char		*arg_str;
 	t_stacks	stacks;
 
+	init_default_stacks(&stacks);
 	if (argc == 2)
 	{
 		arg_str = ft_strdup(argv[1]);
@@ -40,7 +41,5 @@ int	main(int argc, char *argv[])
 		k_sort(&stacks);
 		free_stacks(&stacks);
 	}
-	else
-		printf_and_exit("Wrong amount of arguments", NULL);
 	return (0);
 }

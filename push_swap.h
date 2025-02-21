@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 12:53:10 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 15:54:55 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/21 10:19:13 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		ft_sqrt(int nb);
 // more_utils.c_________________________________
 int		find_min(t_stacks *stacks);
 int		check_sorted(t_stacks *stack);
+void	init_default_stacks(t_stacks *stacks);
 
 // Malloc_func.c_______________________________
 char	**create_stack_a_split(char *stack_a);

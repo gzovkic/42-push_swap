@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:13:27 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/20 09:43:48 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/21 13:07:33 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	pb(t_stacks *stacks)
 			stacks->stack_b[count + 1] = stacks->stack_b[count];
 			count--;
 		}
-		stacks->stack_b[0] = stacks->stack_a[0];
 		stacks->size_b += 1;
+		stacks->stack_b[0] = stacks->stack_a[0];
 		count = 0;
 		stacks->size_a -= 1;
 		while (count < stacks->size_a)

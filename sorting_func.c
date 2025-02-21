@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 13:02:56 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/17 11:00:28 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/21 13:05:52 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,28 @@ void	sort_two(t_stacks *stacks)
 
 void	sort_three(t_stacks *stacks)
 {
-	if (stacks->stack_a[0] > stacks->stack_a[1]
-		&& stacks->stack_a[0] > stacks->stack_a[2])
-	{
-		ra(stacks);
-		if (stacks->stack_a[0] > stacks->stack_a[1])
-			sa(stacks);
-	}
-	else if (stacks->stack_a[0] > stacks->stack_a[1]
-		&& stacks->stack_a[0] < stacks->stack_a[2])
+	int	a;
+	int	b;
+	int	c;
+
+	a = stacks->stack_a[0];
+	b = stacks->stack_a[1];
+	c = stacks->stack_a[2];
+	if (a > b && a < c)
 		sa(stacks);
-	else if (stacks->stack_a[0] < stacks->stack_a[1]
-		&& stacks->stack_a[0] > stacks->stack_a[2])
-		rra(stacks);
-	else if (stacks->stack_a[0] < stacks->stack_a[1]
-		&& stacks->stack_a[0] < stacks->stack_a[2])
+	else if (a > c && b > c)
 	{
+		sa(stacks);
+		rra(stacks);
+	}
+	else if (a > b && b < c && a > c)
 		ra(stacks);
-		if (stacks->stack_a[0] > stacks->stack_a[1])
-			sa(stacks);
+	else if (a < b && a > c)
+		rra(stacks);
+	else if (a < b && b > c && a < c)
+	{
+		sa(stacks);
+		ra(stacks);
 	}
 }
 

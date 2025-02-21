@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:53:19 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 12:18:18 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/21 13:07:52 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,14 @@ int	ft_sqrt(int nb)
 		sqr_root++;
 	}
 	return (0);
+}
+
+void	init_default_stacks(t_stacks *stacks)
+{
+	stacks->size_a = 0;
+	stacks->size_b = 0;
+	stacks->size_i = 0;
+	stacks->stack_a = NULL;
+	stacks->stack_b = NULL;
+	stacks->index_stack = NULL;
 }

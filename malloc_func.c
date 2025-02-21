@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   malloc_func.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:27:13 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/18 15:53:40 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/19 08:47:02 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,11 @@ void	create_stacks(char *arg_str, t_stacks *stacks)
 	if (!stacks->stack_a)
 		printf_and_exit("stack_a no no malloc", stacks);
 	stacks->size_a = ft_strlen_index(stack_a_split);
-	check_doubles(stacks);
 	stacks->index_stack = create_stack(stack_a_split);
 	if (!stacks->index_stack)
 		printf_and_exit("index_stack no no malloc", stacks);
 	free_split(stack_a_split);
+	check_doubles(stacks);
 }
 
 void	prepair_stacks(char *arg_str, t_stacks *stacks)
