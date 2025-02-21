@@ -6,7 +6,7 @@
 /*   By: gzovkic <gzovkic@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:27:13 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/19 08:47:02 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/21 14:49:48 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	*create_stack(char **stack_a_split)
 		num = ft_atolo(stack_a_split[count]);
 		if (num > INT_MAX || num < INT_MIN)
 		{
+			free_split(stack_a_split);
 			free_array(stack_a_int);
 			printf_and_exit("Number out of int range", NULL);
 		}

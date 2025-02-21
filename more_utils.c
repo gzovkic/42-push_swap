@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   more_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gzovkic <gzovkic@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gzovkic <gzovkic@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:53:19 by gzovkic           #+#    #+#             */
-/*   Updated: 2025/02/21 13:07:52 by gzovkic          ###   ########.fr       */
+/*   Updated: 2025/02/21 14:52:16 by gzovkic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	check_sorted(t_stacks *stack)
 
 	count = 0;
 	while (stack->stack_a[count] == stack->index_stack[count]
-		&& count < stack->size_a)
+		&& count < stack->size_a - 1)
 		count++;
-	if (count == stack->size_a)
+	if (count == stack->size_a - 1)
 		return (EXIT_SUCCESS);
 	return (EXIT_FAILURE);
 }
